@@ -93,7 +93,7 @@ New sites usually show up for a unique name within a few days to a few weeks aft
 
 - **FlorNeuroPulse:** the live link was cut off in the recording. Add it as `live:` in `src/data/profile.js`.
 - **Mortgage calculator:** I read the address as `frontend-mentor-mortgage-calculator-lac.vercel.app`. Open it to confirm.
-- **GitHub repos:** all "View code" links were checked on 3 November 2026 and point to public repos. If you make one private later, set its  to .
+- **GitHub repos:** all "View code" links were checked on 3 November 2026 and point to public repos. If you make one private later, set its `repo:` to `null` in `src/data/profile.js`.
 
 ## Performance notes
 
