@@ -249,7 +249,7 @@ export const projects = [
       "A responsive mortgage calculator for repayment and interest-only loans, with a dedicated results panel.",
     tags: ["Frontend Mentor", "Responsive UI", "Forms"],
     live: "https://frontend-mentor-mortgage-calculator-lac.vercel.app",
-    repo: null,
+    repo: "https://github.com/Flourish1-bit/frontendMentor-MortgageCalculator",
     image: shot("mortgage-calculator"),
     imageAlt: "Okafor Onyedikachukwu Flourish – Frontend Mentor mortgage repayment calculator interface"
   }
