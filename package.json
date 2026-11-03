@@ -1,0 +1,33 @@
+{
+  "name": "okafor-onyedikachukwu-flourish",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Portfolio and Full Stack AI Machine of Okafor Onyedikachukwu Flourish: full-stack developer, graphic designer and AI developer.",
+  "author": "Okafor Onyedikachukwu Flourish",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"node --watch server/index.js\" \"vite\"",
+    "dev:web": "vite",
+    "dev:api": "node --watch server/index.js",
+    "build": "npm run build:client && npm run build:ssr && node scripts/prerender.mjs && node scripts/check-seo.mjs",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr src/entry-server.jsx --outDir dist-ssr",
+    "start": "node server/index.js",
+    "preview": "npm run build && npm start",
+    "check:seo": "node scripts/check-seo.mjs"
+  },
+  "dependencies": {
+    "compression": "^1.8.0",
+    "express": "^4.21.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.6.0",
+    "concurrently": "^9.1.2",
+    "vite": "^6.3.5"
+  }
+}
