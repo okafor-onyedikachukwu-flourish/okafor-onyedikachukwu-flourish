@@ -6,8 +6,8 @@
   "description": "Portfolio of Okafor Onyedikachukwu Flourish, full-stack developer, graphic designer and AI developer.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0F1328",
-  "theme_color": "#0F1328",
+  "background_color": "#1B1410",
+  "theme_color": "#1B1410",
   "icons": [
     {
       "src": "/icon-192.png",

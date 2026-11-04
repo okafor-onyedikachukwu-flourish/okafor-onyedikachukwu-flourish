@@ -1,7 +1,8 @@
 /* ==========================================================================
    Okafor Onyedikachukwu Flourish: design tokens
-   Palette comes from the portraits: warm studio-lamp brass (the designer)
-   against a night-indigo room, with a cool signal teal for the AI layer.
+   Palette is sampled from the portraits: the dark wood-panelled room,
+   chalk-white shirt collar and warm lamp brass. Flat colour only, no
+   gradient washes, so nothing muddies where two tints meet.
    ========================================================================== */
 @font-face {
   font-family: "Syne";
@@ -18,18 +19,18 @@
 
 :root {
   color-scheme: dark;
-  --ink: #0f1328;
-  --surface: #171c38;
-  --surface-2: #1e2447;
-  --line: #2a3160;
-  --line-strong: #3a427a;
+  --ink: #1b1410;
+  --surface: #241b15;
+  --surface-2: #2e231b;
+  --line: #44362b;
+  --line-strong: #5c4a3c;
   --brass: #e8b65a;
   --brass-hover: #f2c77a;
   --brass-soft: rgba(232, 182, 90, 0.13);
-  --signal: #67e3d3;
-  --signal-soft: rgba(103, 227, 211, 0.11);
-  --paper: #f1eadc;
-  --mist: #a3a9c8;
+  --signal: #e6d8c3;
+  --signal-soft: rgba(230, 216, 195, 0.09);
+  --paper: #f0e8db;
+  --mist: #b8a796;
 
   --font-display: "Syne", "Trebuchet MS", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -39,8 +40,8 @@
   --step-2: clamp(1.45rem, 1.25rem + 0.9vw, 1.95rem);
   --step-3: clamp(2rem, 1.55rem + 2vw, 3.1rem);
 
-  --radius-lg: 22px;
-  --radius-md: 14px;
+  --radius-lg: 12px;
+  --radius-md: 9px;
   --radius-sm: 7px;
   --gutter: clamp(1.15rem, 4vw, 3rem);
   --max: 1180px;
@@ -69,17 +70,6 @@ body {
   color: var(--paper);
   background: var(--ink);
 }
-/* Lamp glow + cool fill, painted once on a fixed layer (no per-scroll repaint). */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(1100px 680px at 88% -12%, rgba(232, 182, 90, 0.17), transparent 62%),
-    radial-gradient(900px 620px at -12% 46%, rgba(103, 227, 211, 0.07), transparent 62%);
-}
 img {
   max-width: 100%;
   height: auto;
@@ -89,7 +79,7 @@ a {
   color: inherit;
 }
 :focus-visible {
-  outline: 2px solid var(--signal);
+  outline: 2px solid var(--brass);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -375,7 +365,6 @@ section {
   aspect-ratio: auto;
   object-fit: cover;
   border-radius: 4px;
-  box-shadow: 0 30px 80px -34px rgba(232, 182, 90, 0.4);
 }
 .viewfinder figcaption {
   margin-top: 0.85rem;
@@ -404,7 +393,7 @@ section {
   padding: 0.45rem 1rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(15, 19, 40, 0.6);
+  background: rgba(27, 20, 16, 0.6);
   color: var(--mist);
   font: inherit;
   font-size: 0.9rem;
@@ -432,7 +421,7 @@ section {
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  background: rgba(23, 28, 56, 0.94);
+  background: rgba(36, 27, 21, 0.94);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
 }
@@ -595,7 +584,7 @@ section {
 }
 .panel {
   padding: 1.3rem;
-  background: rgba(23, 28, 56, 0.95);
+  background: rgba(36, 27, 21, 0.95);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
 }
@@ -761,12 +750,12 @@ section {
 }
 .stage[data-state="active"] {
   background: var(--signal-soft);
-  border-color: rgba(103, 227, 211, 0.4);
+  border-color: rgba(230, 216, 195, 0.4);
 }
 .stage[data-state="active"] .stage-dot {
   border-color: var(--signal);
   color: var(--signal);
-  box-shadow: 0 0 0 4px rgba(103, 227, 211, 0.12);
+  box-shadow: 0 0 0 4px rgba(230, 216, 195, 0.12);
 }
 .stage[data-state="done"] .stage-dot {
   background: var(--signal);
@@ -799,7 +788,7 @@ section {
   background: currentColor;
 }
 .status-pill[data-status="live"] {
-  border-color: rgba(103, 227, 211, 0.45);
+  border-color: rgba(230, 216, 195, 0.45);
   color: var(--signal);
 }
 .status-pill[data-status="demo"] {
@@ -877,8 +866,8 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1.6rem 0.85rem 0.65rem;
-  background: linear-gradient(transparent, rgba(15, 19, 40, 0.88));
+  padding: 0.55rem 0.85rem;
+  background: rgba(27, 20, 16, 0.86);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -886,7 +875,8 @@ section {
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: linear-gradient(135deg, #1e2447, #2a3160 55%, #4a3a26);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
   color: var(--paper);
   font-family: var(--font-display);
   font-weight: 700;
@@ -922,7 +912,7 @@ section {
   align-items: center;
   gap: 0.65rem;
   padding: 0.6rem 0.7rem;
-  background: rgba(30, 36, 71, 0.94);
+  background: rgba(46, 35, 27, 0.94);
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   font-size: 0.88rem;

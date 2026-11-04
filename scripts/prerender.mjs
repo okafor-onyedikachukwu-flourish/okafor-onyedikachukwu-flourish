@@ -276,7 +276,7 @@ ${allTools}
 );
 
 // --------------------------------------------------------------- 404.html
-const notFound = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Page not found | ${attr(person.fullName)}</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0f1328;color:#f1eadc;font:16px/1.6 system-ui,sans-serif;text-align:center;padding:2rem}a{color:#e8b65a;font-weight:700}h1{font-size:2rem;margin:0 0 .5rem}</style></head><body><main><h1>This page doesn’t exist</h1><p>The link may be old. Everything lives on the home page.</p><p><a href="/">Go to ${attr(person.fullName)}’s portfolio</a></p></main></body></html>`;
+const notFound = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Page not found | ${attr(person.fullName)}</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#1b1410;color:#f0e8db;font:16px/1.6 system-ui,sans-serif;text-align:center;padding:2rem}a{color:#e8b65a;font-weight:700}h1{font-size:2rem;margin:0 0 .5rem}</style></head><body><main><h1>This page doesn’t exist</h1><p>The link may be old. Everything lives on the home page.</p><p><a href="/">Go to ${attr(person.fullName)}’s portfolio</a></p></main></body></html>`;
 await fs.writeFile(path.join(dist, "404.html"), notFound);
 
 await fs.rm(path.join(root, "dist-ssr"), { recursive: true, force: true });

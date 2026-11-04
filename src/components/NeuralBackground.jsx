@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 
-// A living neural network drawn on one <canvas>. Built for speed:
+// A living neural network drawn on one <canvas>, in thin chalk lines that
+// bend like Uli line drawing instead of straight sci-fi wires. Built for speed:
 // - starts only when the browser is idle, so it never delays first paint
 // - spatial grid: each node only checks nearby cells, not every other node
 // - lines are batched into 3 strokes per frame instead of hundreds
@@ -9,9 +10,9 @@ import { useEffect, useRef } from "react";
 // - pauses in background tabs; draws one still frame for reduced motion
 const LINK = 132;
 const LINK2 = LINK * LINK;
-const LINE_ALPHA = [0.06, 0.13, 0.22];
+const LINE_ALPHA = [0.05, 0.1, 0.17];
 const BRASS = "232,182,90";
-const SIGNAL = "103,227,211";
+const SIGNAL = "240,232,219";
 
 export default function NeuralBackground() {
   const canvasRef = useRef(null);
@@ -36,6 +37,15 @@ export default function NeuralBackground() {
     let scale = 1;
     let costs = [];
     let idleHandle = 0;
+
+    // Control point for the link between nodes lo < hi. Each pair always bows
+    // the same way, so curves never flip while the nodes drift.
+    const bow = (lo, hi) => {
+      const a = nodes[lo];
+      const b = nodes[hi];
+      const bend = (lo + hi) % 2 ? 0.2 : -0.2;
+      return { x: (a.x + b.x) / 2 - (b.y - a.y) * bend, y: (a.y + b.y) / 2 + (b.x - a.x) * bend };
+    };
 
     const target = () => {
       const base = (w * h) / (lowPower ? 21000 : 14500);
@@ -113,7 +123,9 @@ export default function NeuralBackground() {
               const d2 = dx * dx + dy * dy;
               if (d2 > LINK2) continue;
               const s = 1 - Math.sqrt(d2) / LINK;
-              buckets[s > 0.66 ? 2 : s > 0.33 ? 1 : 0].push(a.x, a.y, b.x, b.y);
+              const lo = Math.min(cell[ai], other[bi]);
+              const hi = Math.max(cell[ai], other[bi]);
+              buckets[s > 0.66 ? 2 : s > 0.33 ? 1 : 0].push(lo, hi);
               adjacency[cell[ai]].push(other[bi]);
               adjacency[other[bi]].push(cell[ai]);
             }
@@ -125,11 +137,14 @@ export default function NeuralBackground() {
       buckets.forEach((segs, i) => {
         if (!segs.length) return;
         ctx.beginPath();
-        for (let k = 0; k < segs.length; k += 4) {
-          ctx.moveTo(segs[k], segs[k + 1]);
-          ctx.lineTo(segs[k + 2], segs[k + 3]);
+        for (let k = 0; k < segs.length; k += 2) {
+          const a = nodes[segs[k]];
+          const b = nodes[segs[k + 1]];
+          const c = bow(segs[k], segs[k + 1]);
+          ctx.moveTo(a.x, a.y);
+          ctx.quadraticCurveTo(c.x, c.y, b.x, b.y);
         }
-        ctx.strokeStyle = `rgba(130,142,210,${LINE_ALPHA[i]})`;
+        ctx.strokeStyle = `rgba(${SIGNAL},${LINE_ALPHA[i]})`;
         ctx.stroke();
       });
 
@@ -143,7 +158,7 @@ export default function NeuralBackground() {
           ctx.lineTo(p.x, p.y);
         }
       }
-      ctx.strokeStyle = `rgba(${SIGNAL},0.16)`;
+      ctx.strokeStyle = `rgba(${SIGNAL},0.12)`;
       ctx.stroke();
 
       for (const warm of [false, true]) {
@@ -154,7 +169,7 @@ export default function NeuralBackground() {
           ctx.moveTo(p.x + r, p.y);
           ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
         }
-        ctx.fillStyle = `rgba(${warm ? BRASS : SIGNAL},0.78)`;
+        ctx.fillStyle = `rgba(${warm ? BRASS : SIGNAL},${warm ? 0.8 : 0.5})`;
         ctx.fill();
       }
 
@@ -190,16 +205,19 @@ export default function NeuralBackground() {
         const a = nodes[pulse.a];
         const b = nodes[pulse.b];
         if (!a || !b) continue;
-        const x = a.x + (b.x - a.x) * pulse.t;
-        const y = a.y + (b.y - a.y) * pulse.t;
+        // Follow the same curve the link is drawn with.
+        const lo = Math.min(pulse.a, pulse.b);
+        const hi = Math.max(pulse.a, pulse.b);
+        const p0 = nodes[lo];
+        const p2 = nodes[hi];
+        const c = bow(lo, hi);
+        const u = pulse.a === lo ? pulse.t : 1 - pulse.t;
+        const x = (1 - u) * (1 - u) * p0.x + 2 * (1 - u) * u * c.x + u * u * p2.x;
+        const y = (1 - u) * (1 - u) * p0.y + 2 * (1 - u) * u * c.y + u * u * p2.y;
         const color = pulse.warm ? BRASS : SIGNAL;
-        ctx.fillStyle = `rgba(${color},0.18)`;
+        ctx.fillStyle = `rgba(${color},0.9)`;
         ctx.beginPath();
-        ctx.arc(x, y, 6, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = `rgba(${color},0.95)`;
-        ctx.beginPath();
-        ctx.arc(x, y, 1.8, 0, Math.PI * 2);
+        ctx.arc(x, y, 2, 0, Math.PI * 2);
         ctx.fill();
       }
     }
