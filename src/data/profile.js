@@ -79,7 +79,7 @@ export const person = {
       height: 1022
     }
   },
-  ogImage: "/assets/images/okafor-onyedikachukwu-flourish-og-card.jpg"
+  ogImage: "/assets/images/okafor-onyedikachukwu-flourish-share-card.jpg"
 };
 
 // ---------------------------------------------------------------------------
