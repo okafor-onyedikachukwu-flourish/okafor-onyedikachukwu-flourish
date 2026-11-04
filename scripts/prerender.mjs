@@ -65,7 +65,7 @@ const headTags = [
   prop("og:image:alt", seo.socialImageAlt),
   prop("profile:first_name", person.givenName),
   prop("profile:last_name", person.familyName),
-  prop("profile:username", "Flourish1-bit"),
+  prop("profile:username", "okafor-onyedikachukwu-flourish"),
 
   meta("twitter:card", "summary_large_image"),
   meta("twitter:title", seo.socialTitle),

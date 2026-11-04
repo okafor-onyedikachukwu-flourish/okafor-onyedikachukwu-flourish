@@ -44,7 +44,7 @@ scripts/prerender.mjs      ← writes SEO HTML, structured data, sitemap.xml, ro
 
 ## Put it online with Vercel
 
-1. Create a new GitHub repo (for example `Flourish1-bit/okafor-onyedikachukwu-flourish`) and push this folder to it.
+1. Create a new GitHub repo (for example `okafor-onyedikachukwu-flourish/okafor-onyedikachukwu-flourish`) and push this folder to it.
 2. In Vercel, click **Add New → Project** and import the repo. Name the project **okafor-onyedikachukwu-flourish**, so your address becomes `okafor-onyedikachukwu-flourish.vercel.app`.
 3. Under **Environment Variables**, add:
    - `SITE_URL` = your final address, for example `https://okafor-onyedikachukwu-flourish.vercel.app`
@@ -68,7 +68,7 @@ All metadata is generated from the `seo` and `person` blocks in `src/data/profil
 
 **Files for crawlers:** `sitemap.xml` with 11 images for Google Images, `robots.txt`, `humans.txt`, and `llms.txt` (helps AI search tools like ChatGPT search and Perplexity describe you correctly). API responses carry `noindex`, and the 404 page is excluded.
 
-**On the page itself:** your full name is the only `<h1>`, it's in every content image's alt text and file name, and the About section states "Also known as Flourish Okafor, and as Flourish1-bit on GitHub".
+**On the page itself:** your full name is the only `<h1>`, it's in every content image's alt text and file name, and the About section states "Also known as Flourish Okafor, and as okafor-onyedikachukwu-flourish on GitHub".
 
 **Automatic audit:** `npm run build` ends with `scripts/check-seo.mjs`, which runs 53 checks and stops the build if anything important breaks. Run it alone with `npm run check:seo`.
 
@@ -78,7 +78,7 @@ Ranking also depends on steps only you can take. Do these after deploying:
 2. In Search Console, open **Sitemaps** and submit `sitemap.xml`. Then use **URL Inspection → Request indexing** on your home page.
 3. **Bing Webmaster Tools** (bing.com/webmasters). You can import your site straight from Search Console, or paste its code into `BING_SITE_VERIFICATION`. Bing also powers DuckDuckGo and Yahoo results.
 4. **Test it:** paste your URL into Google's Rich Results Test (search.google.com/test/rich-results) and validator.schema.org to see the structured data. Share the link in a WhatsApp chat to yourself to see the preview card.
-5. **GitHub profile:** set your name to *Okafor Onyedikachukwu Flourish* and put the new site in the Website field. Add a profile README (a repo named `Flourish1-bit`) that links to it.
+5. **GitHub profile:** set your name to *Okafor Onyedikachukwu Flourish* and put the new site in the Website field. Add a profile README (a repo named `okafor-onyedikachukwu-flourish`) that links to it.
 6. **Point your old portfolio here.** Google already knows `flourish-okafor-portfolio.vercel.app`. Add this `vercel.json` to that old project so its ranking passes to the new site:
    ```json
    { "redirects": [{ "source": "/(.*)", "destination": "https://okafor-onyedikachukwu-flourish.vercel.app/", "permanent": true }] }

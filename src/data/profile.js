@@ -18,7 +18,7 @@ export const person = {
   additionalName: "Onyedikachukwu",
   familyName: "Okafor",
   // Every spelling people (and Google) might use for you.
-  alternateNames: ["Flourish Okafor", "Onyedikachukwu Flourish Okafor", "Flourish Onyedikachukwu Okafor", "Flourish1-bit"],
+  alternateNames: ["Flourish Okafor", "Onyedikachukwu Flourish Okafor", "Flourish Onyedikachukwu Okafor"],
   age: 14,
   // Town-level only. The school is deliberately not published.
   location: {
@@ -38,9 +38,9 @@ export const person = {
     "My recent work is mostly AI: FlorScene.Agent turns one prompt into a multi-track film sequence using a crew of AI agents, and OmniDesk Local uses Gemini AI to triage customer messages for small service businesses.",
     "I also build practical tools: EcoSmart for smarter waste management, a SaaS workspace for trade crews, and a smart motorcycle parking sign-in. Every project here is live, so you can open it and try it."
   ],
-  github: "https://github.com/Flourish1-bit",
+  github: "https://github.com/okafor-onyedikachukwu-flourish",
   links: [
-    { label: "GitHub", href: "https://github.com/Flourish1-bit" },
+    { label: "GitHub", href: "https://github.com/okafor-onyedikachukwu-flourish" },
     { label: "Previous portfolio", href: "https://flourish-okafor-portfolio.vercel.app" }
   ],
   // Linked to Wikipedia so search engines know exactly which topic is meant.
@@ -64,7 +64,7 @@ export const person = {
     { name: "AI developer", code: "15-1252.00", codeName: "Software Developers", skills: ["AI agents", "LLM orchestration", "Gemini API"] },
     { name: "Graphic designer", code: "27-1024.00", codeName: "Graphic Designers", skills: ["Brand identity", "UI design", "Figma", "Photoshop", "Illustrator", "Canva"] }
   ],
-  aka: "Also known as Flourish Okafor, and as Flourish1-bit on GitHub.",
+  aka: "Also known as Flourish Okafor, and as okafor-onyedikachukwu-flourish on GitHub.",
   portraits: {
     hero: {
       base: "/assets/images/okafor-onyedikachukwu-flourish-portrait-grey-suit",
@@ -101,7 +101,7 @@ export const seo = {
   // Google ignores this tag, but Bing and some smaller engines still read it.
   keywords: [
     "Okafor Onyedikachukwu Flourish", "Flourish Okafor", "Onyedikachukwu Flourish Okafor", "Flourish Onyedikachukwu Okafor",
-    "Flourish1-bit", "full-stack developer", "AI developer", "graphic designer", "React developer", "young developer",
+    "full-stack developer", "AI developer", "graphic designer", "React developer", "young developer",
     "FlorScene.Agent", "OmniDesk Local", "FlorXup", "SiteQuote AI", "EcoSmart",
     "developer in Nsukka", "Enugu State developer", "Nigerian developer", "Nigerian AI developer"
   ],
@@ -137,7 +137,7 @@ export const projects = [
       "An autonomous agentic filmmaking studio. AI screenwriter, cinematographer and lighting-director agents work together to produce editable timelines, screenplay scripts and DaVinci Resolve–ready EDL cuts from one idea.",
     tags: ["AI agents", "LLM orchestration", "React", "Vite"],
     live: "https://flor-scene-agent.vercel.app",
-    repo: "https://github.com/Flourish1-bit/FlorScene-Agent",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/FlorScene-Agent",
     image: shot("florscene-agent"),
     imageAlt: "Okafor Onyedikachukwu Flourish – FlorScene.Agent AI filmmaking app home screen: turn a single prompt into a multi-track cinema sequence"
   },
@@ -151,7 +151,7 @@ export const projects = [
       "Turns incoming customer inquiry threads into revenue by detecting intent, predicting urgency and drafting conversion-ready replies with Gemini AI. Includes a live chat widget demo and dashboard.",
     tags: ["Gemini AI", "Next.js", "Framer Motion"],
     live: "https://omini-desk-local.vercel.app",
-    repo: "https://github.com/Flourish1-bit/OminiDesk-Local",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/OminiDesk-Local",
     image: shot("omnidesk-local"),
     imageAlt: "Okafor Onyedikachukwu Flourish – OmniDesk Local Gemini AI customer triage agent landing page"
   },
@@ -165,7 +165,7 @@ export const projects = [
       "The core engine of FlorNeuroPulse, my latest AI project. Shipped October 2025 and still growing.",
     tags: ["AI", "In progress"],
     live: null, // Add the live URL from your Vercel dashboard (it was cut off in the recording).
-    repo: "https://github.com/Flourish1-bit/FlorNeuroPulse",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/FlorNeuroPulse",
     remoteImage: unsplash("photo-1677442136019-21780ecad995"),
     imageAlt: "Okafor Onyedikachukwu Flourish – FlorNeuroPulse AI project, abstract neural network visual"
   },
@@ -179,7 +179,7 @@ export const projects = [
       "A chat platform designed so people can connect freely while keeping their conversations private.",
     tags: ["Real-time chat", "React", "Vite"],
     live: "https://florxup.vercel.app",
-    repo: "https://github.com/Flourish1-bit/FlorXup",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/FlorXup",
     image: shot("florxup"),
     imageAlt: "Okafor Onyedikachukwu Flourish – FlorXup private chat web app landing page"
   },
@@ -193,7 +193,7 @@ export const projects = [
       "Field workers clock in to shifts, log job-site progress, see assigned schedules and request materials from their contractor, all from a phone-first workspace.",
     tags: ["SaaS", "React", "Vite"],
     live: "https://site-quote-ai.vercel.app",
-    repo: "https://github.com/Flourish1-bit/SiteQuote-AI",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/SiteQuote-AI",
     image: shot("sitequote-ai"),
     imageAlt: "Okafor Onyedikachukwu Flourish – SiteQuote AI SaaS field worker dashboard with shift timer"
   },
@@ -207,7 +207,7 @@ export const projects = [
       "A waste-management web app with a waste categorizer, a map of nearby recycling centres and a form to report waste issues with photos. Designed and branded by me.",
     tags: ["Web app", "Maps", "Brand design"],
     live: "https://ecosmart-website.vercel.app",
-    repo: "https://github.com/Flourish1-bit/Ecosmart-website",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/Ecosmart-website",
     image: shot("ecosmart"),
     imageAlt: "Okafor Onyedikachukwu Flourish – EcoSmart waste management web app splash screen, designed by Flourish Okafor"
   },
@@ -221,7 +221,7 @@ export const projects = [
       "A production-ready authentication interface where riders sign in with a registration number or staff ID, keeping rider identity separate from the parking service layer.",
     tags: ["Authentication", "React", "Vite"],
     live: "https://unn-parking-lot.vercel.app",
-    repo: "https://github.com/Flourish1-bit/unnParkingLot",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/unnParkingLot",
     image: shot("unn-smart-parking"),
     imageAlt: "Okafor Onyedikachukwu Flourish – UNN smart motorcycle parking rider sign-in screen"
   },
@@ -235,7 +235,7 @@ export const projects = [
       "Tic-tac-toe with selectable difficulty, background music, a restart control and a glowing neon board.",
     tags: ["Game", "JavaScript", "Visual design"],
     live: "https://tic-tac-toe-navy-kappa.vercel.app",
-    repo: "https://github.com/Flourish1-bit/Tic-Tac-Toe",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/Tic-Tac-Toe",
     image: shot("tic-tac-toe-deluxe"),
     imageAlt: "Okafor Onyedikachukwu Flourish – Tic Tac Toe Deluxe neon game board with difficulty and music controls"
   },
@@ -249,7 +249,7 @@ export const projects = [
       "A responsive mortgage calculator for repayment and interest-only loans, with a dedicated results panel.",
     tags: ["Frontend Mentor", "Responsive UI", "Forms"],
     live: "https://frontend-mentor-mortgage-calculator-lac.vercel.app",
-    repo: "https://github.com/Flourish1-bit/frontendMentor-MortgageCalculator",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/frontendMentor-MortgageCalculator",
     image: shot("mortgage-calculator"),
     imageAlt: "Okafor Onyedikachukwu Flourish – Frontend Mentor mortgage repayment calculator interface"
   }
