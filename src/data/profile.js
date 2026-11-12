@@ -34,7 +34,7 @@ export const person = {
   intro:
     "I’m 14, based in Nsukka, Enugu State, Nigeria, and I build real products end to end: React and Next.js interfaces, Node back ends, AI agents powered by large language models, and the visual identity that ties them together.",
   bio: [
-    "I’m Okafor Onyedikachukwu Flourish, a 14-year-old full-stack developer, graphic designer and AI developer based in Nsukka, Enugu State, Nigeria. I design the brand, build the interface and wire up the back end myself, then ship it to production on Vercel.",
+    "I’m Okafor Onyedikachukwu Flourish, a 14-year-old full-stack developer, graphic designer and AI developer based in Nsukka, Enugu State, Nigeria. I design the brand, build the interface and wire up the back end myself, then ship it to production on Vercel or Render.",
     "My recent work is mostly AI: FlorScene.Agent turns one prompt into a multi-track film sequence using a crew of AI agents, and OmniDesk Local uses Gemini AI to triage customer messages for small service businesses.",
     "I also build practical tools: EcoSmart for smarter waste management, a SaaS workspace for trade crews, and a smart motorcycle parking sign-in. Every project here is live, so you can open it and try it."
   ],
@@ -126,6 +126,20 @@ export const categories = [
 ];
 
 export const projects = [
+  {
+    slug: "flaria",
+    name: "Flaria",
+    category: "ai",
+    year: 2026,
+    summary: "Spots early change in a person's voice and facial movement.",
+    description:
+      "Compares a person's speech and facial movement with their own seven-day baseline and flags sustained change. Face tracking runs in the browser so video never leaves the device, and a cross-attention model fuses voice and face signals on a FastAPI server. Built for research, with informed consent, clinician labels and an admin console; it isn't a medical device.",
+    tags: ["Multimodal AI", "FastAPI", "React + TypeScript", "PostgreSQL"],
+    live: "https://flaria-smpw.onrender.com",
+    repo: "https://github.com/okafor-onyedikachukwu-flourish/Flaria",
+    image: shot("flaria"),
+    imageAlt: "Okafor Onyedikachukwu Flourish – Flaria voice and facial movement monitoring app landing page on a phone"
+  },
   {
     slug: "florscene-agent",
     name: "FlorScene.Agent",

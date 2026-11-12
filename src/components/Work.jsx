@@ -75,7 +75,7 @@ export default function Work() {
       <div className="wrap">
         <div className="section-head">
           <h2 id="work-title">Selected work</h2>
-          <p>Every project here is deployed and live. I designed and built each one, from the first sketch to production on Vercel.</p>
+          <p>Every project here is deployed and live. I designed and built each one, from the first sketch to production.</p>
         </div>
 
         <div className="filters" role="group" aria-label="Filter projects">
