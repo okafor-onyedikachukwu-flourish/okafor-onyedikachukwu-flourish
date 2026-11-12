@@ -102,7 +102,7 @@ export const seo = {
   keywords: [
     "Okafor Onyedikachukwu Flourish", "Flourish Okafor", "Onyedikachukwu Flourish Okafor", "Flourish Onyedikachukwu Okafor",
     "full-stack developer", "AI developer", "graphic designer", "React developer", "young developer",
-    "FlorScene.Agent", "OmniDesk Local", "FlorXup", "SiteQuote AI", "EcoSmart",
+    "FlorScene.Agent", "OmniDesk Local", "Vynk", "FlorXup", "SiteQuote AI", "EcoSmart",
     "developer in Nsukka", "Enugu State developer", "Nigerian developer", "Nigerian AI developer"
   ],
   // The day this portfolio first went live. Keep it fixed; dateModified updates on every build.
@@ -182,6 +182,19 @@ export const projects = [
     repo: "https://github.com/okafor-onyedikachukwu-flourish/FlorNeuroPulse",
     remoteImage: unsplash("photo-1677442136019-21780ecad995"),
     imageAlt: "Okafor Onyedikachukwu Flourish – FlorNeuroPulse AI project, abstract neural network visual"
+  },
+  {
+    slug: "vynk",
+    name: "Vynk",
+    category: "fullstack",
+    year: 2026,
+    summary: "A WhatsApp-style messaging app where people find each other by email.",
+    description:
+      "A real-time messaging app for Android and iPhone with one-to-one and group chats, photos, files, GIFs, emoji reactions, replies and read receipts. It keeps working offline and sends queued messages once the connection returns, offers privacy switches for read receipts and last seen that the database itself enforces, and comes with push notifications, blocking, reporting and an admin console with two-step sign-in.",
+    tags: ["React Native + Expo", "Supabase", "PostgreSQL", "Real-time chat"],
+    live: "https://vynk-9w1s.onrender.com",
+    image: shot("vynk"),
+    imageAlt: "Okafor Onyedikachukwu Flourish – Vynk messaging app welcome screen on an Android phone"
   },
   {
     slug: "florxup",
@@ -277,12 +290,16 @@ export const archive = [
 
 // Devicon logos, verified against devicon@2.16.0 on the npm registry.
 const devicon = (path) => `https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/${path}.svg`;
+// Logos devicon doesn't have (Expo), from Simple Icons 16.36.0, verified on the npm registry.
+const simpleIcon = (slug) => `https://cdn.jsdelivr.net/npm/simple-icons@16.36.0/icons/${slug}.svg`;
 
 export const stack = [
   {
     group: "Build the interface",
     items: [
       { name: "React", icon: devicon("react/react-original") },
+      { name: "React Native", icon: devicon("react/react-original") },
+      { name: "Expo", icon: simpleIcon("expo"), invert: true },
       { name: "Next.js", icon: devicon("nextjs/nextjs-original"), invert: true },
       { name: "Vite", icon: devicon("vitejs/vitejs-original") },
       { name: "JavaScript", icon: devicon("javascript/javascript-original") },
@@ -296,6 +313,8 @@ export const stack = [
     items: [
       { name: "Node.js", icon: devicon("nodejs/nodejs-original") },
       { name: "Express", icon: devicon("express/express-original"), invert: true },
+      { name: "Supabase", icon: devicon("supabase/supabase-original") },
+      { name: "PostgreSQL", icon: devicon("postgresql/postgresql-original") },
       { name: "Gemini API", icon: devicon("google/google-original") },
       { name: "Git", icon: devicon("git/git-original") },
       { name: "GitHub", icon: devicon("github/github-original"), invert: true },
